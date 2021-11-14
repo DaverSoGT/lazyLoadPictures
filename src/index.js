@@ -1,6 +1,10 @@
 import { registerImage, count, printState } from "./lazy"
 // create a image
 // add #image
+const max = 200
+const min = 1
+
+const random = () => Math.floor(Math.random()*(max - min)) + min
 
 const createImageNode = () => {
   const container = document.createElement('div')
@@ -9,7 +13,7 @@ const createImageNode = () => {
   const image = document.createElement('img')
   image.className = 'mx-auto'
   image.width = '320'
-  image.dataset.src = 'https://source.unsplash.com/random?technology'
+  image.dataset.src = `https://source.unsplash.com/category/tech/800x600/?sig=${random()}` 
   
   const loadingImage = document.createElement('div')
   loadingImage.className = 'bg-gray-300'
